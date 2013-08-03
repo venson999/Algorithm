@@ -16,25 +16,15 @@ public class InsertionSort {
         for (int i = 1; i < length; i++) {
 
             int temp = a[i];
+            int j = i - 1;
 
-            for (int j = i; j > 0; j--) {
+            while (j >= 0 && a[j] > temp) {
 
-                if (a[j - 1] > temp) {
-
-                    a[j] = a[j - 1];
-
-                    if (j - 1 == 0) {
-
-                        a[j - 1] = temp;
-                        break;
-                    }
-
-                } else if (a[j - 1] < temp) {
-
-                    a[j] = temp;
-                    break;
-                }
+                a[j + 1] = a[j];
+                j--;
             }
+
+            a[j + 1] = temp;
         }
     }
 
@@ -54,5 +44,4 @@ public class InsertionSort {
         System.out.println(Arrays.toString(array2));
 
     }
-
 }

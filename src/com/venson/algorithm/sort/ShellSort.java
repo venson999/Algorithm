@@ -19,22 +19,15 @@ public class ShellSort {
 
                     int temp = a[j];
 
-                    for (int k = j; k >= step; k -= step) {
+                    int k = j - step;
 
-                        if (a[k - step] > temp) {
+                    while (k >= 0 && a[k] > temp) {
 
-                            a[k] = a[k - step];
-
-                            if (k - step < step) {
-                                a[k - step] = temp;
-                                break;
-                            }
-
-                        } else if (a[k - step] < temp) {
-                            a[k] = temp;
-                            break;
-                        }
+                        a[k + step] = a[k];
+                        k -= step;
                     }
+
+                    a[k + step] = temp;
                 }
             }
         }
