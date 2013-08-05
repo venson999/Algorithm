@@ -13,8 +13,7 @@ public class HeapSort {
     /**
      * Heapsort an int array.
      *
-     * @param a
-     *            an int array that is wanted to sort.
+     * @param a an int array that is wanted to sort.
      */
     public void sort(int[] a) {
 
@@ -31,8 +30,7 @@ public class HeapSort {
     /**
      * build a heap.
      *
-     * @param a
-     *            an int array that is wanted to build to a heap.
+     * @param a an int array that is wanted to build to a heap.
      */
     public void buildHeap(int[] a) {
 
@@ -47,12 +45,9 @@ public class HeapSort {
     /**
      * sink a node to bottom
      *
-     * @param a
-     *            an int array
-     * @param nodeIndex
-     *            the root index of the subtree
-     * @param nodeNum
-     *            the number of the tree
+     * @param a an int array
+     * @param nodeIndex the root index of the subtree
+     * @param nodeNum the number of the tree
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
@@ -87,24 +82,18 @@ abstract class HeapSortSinker {
     /**
      * sink a node to bottom
      *
-     * @param a
-     *            an int array
-     * @param nodeIndex
-     *            the root index of the subtree
-     * @param nodeNum
-     *            the number of the tree
+     * @param a an int array
+     * @param nodeIndex the root index of the subtree
+     * @param nodeNum the number of the tree
      */
     abstract public void sink(int[] a, int nodeIndex, int nodeNum);
 
     /**
      * exchange two items in the int array
      *
-     * @param a
-     *            an int array
-     * @param i
-     *            node index
-     * @param j
-     *            node index
+     * @param a an int array
+     * @param i node index
+     * @param j node index
      */
     public void exchange(int[] a, int i, int j) {
 
@@ -121,12 +110,9 @@ class RecursiveHeapSortSinker extends HeapSortSinker {
     /**
      * sink a node to bottom with a recursive way
      *
-     * @param a
-     *            an int array
-     * @param nodeIndex
-     *            the root index of the subtree
-     * @param nodeNum
-     *            the number of the tree
+     * @param a an int array
+     * @param nodeIndex the root index of the subtree
+     * @param nodeNum the number of the tree
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
@@ -167,12 +153,9 @@ class NumericHeapSortSinker extends HeapSortSinker {
     /**
      * sink a node to bottom with a numeric way
      *
-     * @param a
-     *            an int array
-     * @param nodeIndex
-     *            the root index of the subtree
-     * @param nodeNum
-     *            the number of the tree
+     * @param a an int array
+     * @param nodeIndex the root index of the subtree
+     * @param nodeNum the number of the tree
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
