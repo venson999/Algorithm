@@ -1,5 +1,7 @@
 package com.venson.algorithm.sort;
 
+import static com.venson.algorithm.util.ArrayUtil.swap;
+
 import java.util.Arrays;
 
 public class BubbleSort {
@@ -15,12 +17,7 @@ public class BubbleSort {
             for (int j = length - 1; j > i; j--) {
 
                 if (sort[j] < sort[j - 1]) {
-
-                    int temp = sort[j - 1];
-
-                    sort[j - 1] = sort[j];
-
-                    sort[j] = temp;
+                    swap(sort, j - 1, j);
                 }
             }
         }

@@ -1,9 +1,10 @@
 package com.venson.algorithm.permutation;
 
+import static com.venson.algorithm.util.ArrayUtil.swap;
+
 import java.util.Arrays;
 
 import com.venson.algorithm.sort.SelectionSort;
-import static com.venson.algorithm.util.ArrayUtil.swap;
 
 /**
  * Permutate by dictionary order

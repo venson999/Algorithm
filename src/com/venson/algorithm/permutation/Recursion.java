@@ -1,8 +1,8 @@
 package com.venson.algorithm.permutation;
 
-import java.util.Arrays;
-
 import static com.venson.algorithm.util.ArrayUtil.swap;
+
+import java.util.Arrays;
 
 /**
  * Permutate by recursion

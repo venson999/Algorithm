@@ -1,5 +1,7 @@
 package com.venson.algorithm.sort;
 
+import static com.venson.algorithm.util.ArrayUtil.swap;
+
 import java.util.Arrays;
 
 public class QuickSort {
@@ -61,13 +63,7 @@ public class QuickSort {
             while (i < j) {
 
                 if (key > a[j]) {
-
-                    int temp = a[j];
-
-                    a[j] = a[i];
-
-                    a[i] = temp;
-
+                    swap(a, i, j);
                     break;
                 }
 
@@ -78,13 +74,7 @@ public class QuickSort {
             while (i < j) {
 
                 if (key < a[i]) {
-
-                    int temp = a[j];
-
-                    a[j] = a[i];
-
-                    a[i] = temp;
-
+                    swap(a, i, j);
                     break;
                 }
 
