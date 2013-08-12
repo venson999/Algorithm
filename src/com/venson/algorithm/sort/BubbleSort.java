@@ -4,35 +4,37 @@ import static com.venson.algorithm.util.ArrayUtil.swap;
 
 import java.util.Arrays;
 
+/**
+ * Bubble Sort
+ */
 public class BubbleSort {
 
-    public int[] sort(int[] original) {
+    /**
+     * Bubble sort array in ascending order.
+     *
+     * @param a The sort array.
+     */
+    public static void sort(int[] a) {
 
-        int[] sort = original.clone();
+        for (int i = 0; i < a.length - 1; i++) {
 
-        int length = original.length;
+            for (int j = a.length - 1; j > i; j--) {
 
-        for (int i = 0; i < length - 1; i++) {
-
-            for (int j = length - 1; j > i; j--) {
-
-                if (sort[j] < sort[j - 1]) {
-                    swap(sort, j - 1, j);
+                if (a[j] < a[j - 1]) {
+                    swap(a, j - 1, j);
                 }
             }
         }
-
-        return sort;
     }
 
     public static void main(String[] args) {
 
-        BubbleSort bubbleSort = new BubbleSort();
+        int[] a = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 
-        int[] array = { 3, 4, 1, 2, 5, 7, 8, 0, 9 };
+        System.out.println(Arrays.toString(a));
 
-        // int[] array1 = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        sort(a);
 
-        System.out.println(Arrays.toString(bubbleSort.sort(array)));
+        System.out.println(Arrays.toString(a));
     }
 }

@@ -2,14 +2,17 @@ package com.venson.algorithm.sort;
 
 import java.util.Arrays;
 
+/**
+ * Insertion Sort
+ */
 public class InsertionSort {
 
     /**
-     * Insertionsort an int array.
+     * Insertion sort array in ascending order.
      *
-     * @param a an int array that is wanted to sort.
+     * @param a The sort array.
      */
-    public void sort(int[] a) {
+    public static void sort(int[] a) {
 
         int length = a.length;
 
@@ -28,20 +31,15 @@ public class InsertionSort {
         }
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
-        InsertionSort insertionSort = new InsertionSort();
+        int[] a = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 
-        int[] array2 = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+        System.out.println(Arrays.toString(a));
 
-        System.out.println(Arrays.toString(array2));
+        sort(a);
 
-        insertionSort.sort(array2);
-
-        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(a));
 
     }
 }

@@ -5,6 +5,13 @@ package com.venson.algorithm.search;
  */
 public class BinarySearch {
 
+    /**
+     * Binary search target in array.
+     *
+     * @param a The search array.
+     * @param b The search target.
+     * @return The search result.
+     */
     public static boolean search(int[] a, int b) {
 
         int left = 0;
@@ -36,9 +43,6 @@ public class BinarySearch {
         return false;
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
         int[] a = { 1, 3, 5, 7, 8, 9, 10 };

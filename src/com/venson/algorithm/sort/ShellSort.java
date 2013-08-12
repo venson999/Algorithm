@@ -7,6 +7,11 @@ import java.util.Arrays;
  */
 public class ShellSort {
 
+    /**
+     * Shell sort array in ascending order.
+     *
+     * @param a The sort array.
+     */
     public static void sort(int[] a) {
 
         int step = a.length;
@@ -33,12 +38,12 @@ public class ShellSort {
         }
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
-        int[] a = { 0, 8, 7, 3, 5, 4, 6, 2, 1, 9 };
+        int[] a = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
+
+        System.out.println(Arrays.toString(a));
+
         sort(a);
 
         System.out.println(Arrays.toString(a));

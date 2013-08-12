@@ -7,12 +7,24 @@ import java.util.Arrays;
  */
 public class MergeSort {
 
+    /**
+     * Merge sort array in ascending order.
+     *
+     * @param a The sort array.
+     */
     public static void sort(int[] a) {
-
         mergeSort(a, 0, a.length - 1, new int[a.length]);
     }
 
-    public static void mergeSort(int[] a, int left, int right, int[] temp) {
+    /**
+     * Internal merge sort that makes recursive calls.
+     *
+     * @param a The sort array.
+     * @param left The left-most index of the subarray.
+     * @param right The right-most index of the subarray.
+     * @param temp The work array.
+     */
+    private static void mergeSort(int[] a, int left, int right, int[] temp) {
 
         if (left < right) {
             int middle = (left + right) / 2;
@@ -22,7 +34,16 @@ public class MergeSort {
         }
     }
 
-    public static void mergeArray(int[] a, int left, int middle, int right, int[] temp) {
+    /**
+     * Merge array in ascending order.
+     *
+     * @param a The sort array.
+     * @param left The left-most index of the subarray.
+     * @param middle The middle index of the subarray between left and right.
+     * @param right The right-most index of the subarray.
+     * @param temp The work array.
+     */
+    private static void mergeArray(int[] a, int left, int middle, int right, int[] temp) {
 
         int i = left;
         int j = middle + 1;
@@ -58,9 +79,6 @@ public class MergeSort {
         }
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
         int[] a = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };

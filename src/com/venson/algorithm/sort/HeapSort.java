@@ -2,6 +2,9 @@ package com.venson.algorithm.sort;
 
 import java.util.Arrays;
 
+/**
+ * Heap Sort
+ */
 public class HeapSort {
 
     private HeapSortSinker sinker = null;
@@ -11,9 +14,9 @@ public class HeapSort {
     }
 
     /**
-     * Heapsort an int array.
+     * Heap sort array in ascending order.
      *
-     * @param a an int array that is wanted to sort.
+     * @param a The sort array.
      */
     public void sort(int[] a) {
 
@@ -21,16 +24,16 @@ public class HeapSort {
 
         for (int i = a.length; i > 1; i--) {
 
-            sinker.exchange(a, 1, i);
+            sinker.swap(a, 1, i);
 
             sink(a, 1, i - 1);
         }
     }
 
     /**
-     * build a heap.
+     * Build array to a heap.
      *
-     * @param a an int array that is wanted to build to a heap.
+     * @param a The sort array.
      */
     public void buildHeap(int[] a) {
 
@@ -43,11 +46,11 @@ public class HeapSort {
     }
 
     /**
-     * sink a node to bottom
+     * Sink a node to bottom of the heap.
      *
-     * @param a an int array
-     * @param nodeIndex the root index of the subtree
-     * @param nodeNum the number of the tree
+     * @param a The sort array.
+     * @param nodeIndex The root index of the subtree.
+     * @param nodeNum the number of the tree.
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
@@ -59,20 +62,17 @@ public class HeapSort {
         sinker.sink(a, nodeIndex, nodeNum);
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
         HeapSort heapSort = new HeapSort(new NumericHeapSortSinker());
 
-        int[] array2 = { 0, 1, 2, 8, 8, 7, 7, 6, 6, 9 };
+        int[] a = { 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
 
-        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(a));
 
-        heapSort.sort(array2);
+        heapSort.sort(a);
 
-        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(a));
 
     }
 }
@@ -80,22 +80,22 @@ public class HeapSort {
 abstract class HeapSortSinker {
 
     /**
-     * sink a node to bottom
+     * Sink a node to bottom of the heap.
      *
-     * @param a an int array
-     * @param nodeIndex the root index of the subtree
-     * @param nodeNum the number of the tree
+     * @param a The sort array.
+     * @param nodeIndex The root index of the subtree.
+     * @param nodeNum The number of the tree.
      */
     abstract public void sink(int[] a, int nodeIndex, int nodeNum);
 
     /**
-     * exchange two items in the int array
+     * Swap two items in array.
      *
-     * @param a an int array
-     * @param i node index
-     * @param j node index
+     * @param a The swap array.
+     * @param i The node index.
+     * @param j The node index.
      */
-    public void exchange(int[] a, int i, int j) {
+    public void swap(int[] a, int i, int j) {
 
         int swap = a[i - 1];
 
@@ -108,11 +108,11 @@ abstract class HeapSortSinker {
 class RecursiveHeapSortSinker extends HeapSortSinker {
 
     /**
-     * sink a node to bottom with a recursive way
+     * Sink a node to bottom with a recursive way.
      *
-     * @param a an int array
-     * @param nodeIndex the root index of the subtree
-     * @param nodeNum the number of the tree
+     * @param a The sort array.
+     * @param nodeIndex The root index of the subtree.
+     * @param nodeNum The number of the tree.
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
@@ -127,7 +127,7 @@ class RecursiveHeapSortSinker extends HeapSortSinker {
         if (rightChildIndex > nodeNum) {
 
             if (a[nodeIndex - 1] < a[leftChildIndex - 1]) {
-                exchange(a, nodeIndex, leftChildIndex);
+                swap(a, nodeIndex, leftChildIndex);
                 sink(a, leftChildIndex, nodeNum);
             }
 
@@ -141,7 +141,7 @@ class RecursiveHeapSortSinker extends HeapSortSinker {
             if (max == nodeIndex) {
                 return;
             } else {
-                exchange(a, nodeIndex, max);
+                swap(a, nodeIndex, max);
                 sink(a, max, nodeNum);
             }
         }
@@ -151,11 +151,11 @@ class RecursiveHeapSortSinker extends HeapSortSinker {
 class NumericHeapSortSinker extends HeapSortSinker {
 
     /**
-     * sink a node to bottom with a numeric way
+     * Sink a node to bottom with a numeric way.
      *
-     * @param a an int array
-     * @param nodeIndex the root index of the subtree
-     * @param nodeNum the number of the tree
+     * @param a The sort array.
+     * @param nodeIndex The root index of the subtree.
+     * @param nodeNum The number of the tree.
      */
     public void sink(int[] a, int nodeIndex, int nodeNum) {
 
@@ -179,7 +179,7 @@ class NumericHeapSortSinker extends HeapSortSinker {
                 return;
             }
 
-            exchange(a, j, i);
+            swap(a, j, i);
 
             n = i * 2;
 

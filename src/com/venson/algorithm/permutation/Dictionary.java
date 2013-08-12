@@ -11,6 +11,11 @@ import com.venson.algorithm.sort.SelectionSort;
  */
 public class Dictionary {
 
+    /**
+     * Permutate array by dictionary order.
+     *
+     * @param a The permutate array.
+     */
     public static void perm(int[] a) {
 
         sort(a);
@@ -52,9 +57,6 @@ public class Dictionary {
         }
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
 
         int[] a = { 2, 1, 4, 5, 3 };
