@@ -9,10 +9,20 @@ public class Recursion {
      * Integer partition by recursion.
      *
      * @param sum The partition number.
+     * @return The partition count.
+     */
+    public static int partition(int sum) {
+        return partition(sum, sum);
+    }
+
+    /**
+     * Internal integer partition that makes recursive calls.
+     *
+     * @param sum The partition number.
      * @param largestNumber The largest Number.
      * @return The partition count.
      */
-    public static int partition(int sum, int largestNumber) {
+    private static int partition(int sum, int largestNumber) {
 
         if (sum == 1 || largestNumber == 1) {
             return 1;
@@ -31,6 +41,6 @@ public class Recursion {
 
     public static void main(String[] args) {
 
-        System.out.println(partition(6, 6));
+        System.out.println(partition(6));
     }
 }
