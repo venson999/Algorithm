@@ -7,12 +7,12 @@ import java.util.Arrays;
 import com.venson.algorithm.sort.SelectionSort;
 
 /**
- * Permutate by dictionary order
+ * Permutate by lexicographic order
  */
-public class Dictionary {
+public class LexicographicOrder {
 
     /**
-     * Permutate array by dictionary order.
+     * Permutate array by lexicographic order.
      *
      * @param a The permutate array.
      */
@@ -45,11 +45,23 @@ public class Dictionary {
         }
     }
 
+    /**
+     * Sort array in ascending order.
+     *
+     * @param a The sort array.
+     */
     public static void sort(int[] a) {
 
         SelectionSort.sort(a);
     }
 
+    /**
+     * Reverse array value between the given index.
+     *
+     * @param a The reverse array.
+     * @param i The left index.
+     * @param j The right index.
+     */
     public static void reverse(int[] a, int i, int j) {
 
         for (; i < j; i++, j--) {
