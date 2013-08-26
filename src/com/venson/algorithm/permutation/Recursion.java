@@ -5,23 +5,23 @@ import static com.venson.algorithm.util.ArrayUtil.swap;
 import java.util.Arrays;
 
 /**
- * Permutate by recursion
+ * Permute by recursion
  */
 public class Recursion {
 
     /**
      * Permutate array by recursion.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      */
     public static void perm(int[] a) {
         perm(a, 0, a.length - 1);
     }
 
     /**
-     * Internal permutate that makes recursive calls.
+     * Internal permute that makes recursive calls.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      * @param left The left-most index of subarray.
      * @param right The right-most index of subarray.
      */

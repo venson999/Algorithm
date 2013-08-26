@@ -8,14 +8,14 @@ import java.util.Arrays;
 import com.venson.algorithm.sort.QuickSort;
 
 /**
- * Permutate by plain changes
+ * Permute by plain changes
  */
 public class PlainChanges {
 
     /**
-     * Permutate array by plain changes.
+     * Permute array by plain changes.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      */
     public static void perm(int[] a) {
 
@@ -58,7 +58,7 @@ public class PlainChanges {
     /**
      * Find the max movable index.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      * @param direction The direction array.
      * @return The max movable index.
      */
@@ -82,7 +82,7 @@ public class PlainChanges {
     /**
      * Reverse direction which value is greater then the given max movable value.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      * @param direction The direction array.
      * @param value The max movable value.
      */

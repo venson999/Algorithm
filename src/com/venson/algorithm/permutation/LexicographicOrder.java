@@ -7,14 +7,14 @@ import java.util.Arrays;
 import com.venson.algorithm.sort.SelectionSort;
 
 /**
- * Permutate by lexicographic order
+ * Permute by lexicographic order
  */
 public class LexicographicOrder {
 
     /**
-     * Permutate array by lexicographic order.
+     * Permute array by lexicographic order.
      *
-     * @param a The permutate array.
+     * @param a The permute array.
      */
     public static void perm(int[] a) {
 
