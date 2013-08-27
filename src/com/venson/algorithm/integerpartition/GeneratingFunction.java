@@ -40,9 +40,6 @@ public class GeneratingFunction {
 
         }
 
-        System.out.println(c[2]);
-        System.out.println(c[4]);
-
         return c[sum];
     }
 
