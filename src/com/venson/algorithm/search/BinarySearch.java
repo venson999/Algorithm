@@ -10,37 +10,39 @@ public class BinarySearch {
      *
      * @param a The search array.
      * @param b The search target.
-     * @return The search result.
+     * @return The result index.
      */
-    public static boolean search(int[] a, int b) {
+    public static int search(int[] a, int b) {
 
         int left = 0;
         int right = a.length - 1;
         int middle = 0;
 
-        if (a[left] > b && b > a[right]) {
-            return false;
+        if (b < a[left] || b > a[right]) {
+            return -1;
         }
 
         while (left <= right) {
 
-            middle = (left + right) / 2;
+            // The same meaning with "middle = (left + right) / 2;",
+            // but more effective and will not overflow.
+            middle = left + ((right - left) >> 1);
 
-            if (b == a[middle]) {
-
-                return true;
-
-            } else if (b < a[middle]) {
+            if (b < a[middle]) {
 
                 right = middle - 1;
 
             } else if (b > a[middle]) {
 
                 left = middle + 1;
+
+            } else {
+
+                return middle;
             }
         }
 
-        return false;
+        return -1;
     }
 
     public static void main(String[] args) {
